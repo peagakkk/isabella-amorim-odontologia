@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="description" content="Dra. Isabella Amorim — Odontologia Especializada. Atendimento humanizado, estética do sorriso e cuidado personalizado." />
+  <title>Dra. Isabella Amorim | Odontologia Especializada</title>
+
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="icon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7f2eb;
+      --paper:#fffaf4;
+      --ink:#151515;
+      --muted:#756e67;
+      --gold:#c6a36d;
+      --gold-2:#e0c79f;
+      --dark:#111111;
+      --line:rgba(21,21,21,.10);
+      --soft:#efe5d8;
+      --shadow:0 25px 70px rgba(52,39,22,.12);
+      --radius:30px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family:"DM Sans",sans-serif;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(198,163,109,.13), transparent 28%),
+        linear-gradient(180deg,#faf7f2 0%,#f5eee5 100%);
+      overflow-x:hidden;
+    }
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea,select{font:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .topbar{background:#111;color:#f6efe6;text-align:center;padding:9px 16px;font-size:.82rem;letter-spacing:.03em}
+    .nav-wrap{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(18px);
+      background:rgba(250,247,242,.82);
+      border-bottom:1px solid transparent;
+      transition:.25s ease;
+    }
+    .nav-wrap.scrolled{border-bottom-color:var(--line);box-shadow:0 8px 30px rgba(0,0,0,.05)}
+    nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{
+      width:44px;height:44px;border-radius:50%;
+      border:1.5px solid var(--gold);
+      display:grid;place-items:center;
+      font-family:"Playfair Display",serif;font-weight:700;color:#8b6836;
+      background:rgba(255,255,255,.7)
+    }
+    .brand strong{font-family:"Playfair Display",serif;display:block;font-size:1.14rem;line-height:1}
+    .brand span{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+    .menu{display:flex;gap:26px;align-items:center;font-weight:700;font-size:.91rem}
+    .menu a:hover{color:#9d7740}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      min-height:48px;padding:0 20px;border-radius:999px;font-weight:800;
+      border:1px solid transparent;cursor:pointer;transition:.22s ease;
+    }
+    .btn-primary{background:#151515;color:#fff}
+    .btn-primary:hover{transform:translateY(-2px);background:#2a2a2a}
+    .btn-light{background:#fff;border-color:var(--line)}
+    .btn-light:hover{border-color:var(--gold);color:#8d6937}
+    .hamburger{display:none;background:transparent;border:0;font-size:1.6rem}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;
+      color:#8e6a39;font-weight:900;margin-bottom:17px
+    }
+    .eyebrow:before{content:"";width:28px;height:1px;background:var(--gold)}
+    h1,h2,h3{font-family:"Playfair Display",serif;line-height:1.04;margin:0}
+    .hero{padding:58px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:52px;align-items:center}
+    h1{font-size:clamp(3.2rem,6vw,5.7rem);letter-spacing:-.04em}
+    .lead{font-size:1.15rem;color:var(--muted);max-width:650px;margin:24px 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-points{display:flex;gap:18px;flex-wrap:wrap;margin-top:27px;color:var(--muted);font-size:.9rem}
+    .hero-points span{display:flex;align-items:center;gap:8px}
+    .hero-points i{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+    .portrait{
+      position:relative;padding:14px;border-radius:38px;background:rgba(255,255,255,.75);box-shadow:var(--shadow)
+    }
+    .portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:29px}
+    .badge{
+      position:absolute;left:-32px;bottom:28px;
+      background:rgba(255,255,255,.95);backdrop-filter:blur(12px);
+      padding:18px;border-radius:20px;max-width:300px;box-shadow:0 16px 45px rgba(0,0,0,.13)
+    }
+    .stars{color:#c49343;letter-spacing:.14em;font-size:.86rem}
+    .badge p{margin:7px 0 0;font-weight:700;font-size:.94rem}
+    section{padding:86px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:38px}
+    .section-head h2{font-size:clamp(2.3rem,4.5vw,4rem);max-width:760px}
+    .section-head p{margin:0;max-width:510px;color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center}
+    .image-card{border-radius:30px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+    .image-card img{width:100%;aspect-ratio:4/5;object-fit:cover}
+    .about-copy h2{font-size:clamp(2.4rem,4vw,4rem);margin-bottom:18px}
+    .about-copy p{color:var(--muted);font-size:1.04rem}
+    .signature{font-family:"Playfair Display",serif;font-size:1.5rem;color:#906c3a;margin-top:24px}
+    .services-shell{width:min(1280px,calc(100% - 24px));margin:auto;background:#111;color:#fff;border-radius:40px}
+    .services-shell .section-head p{color:#c6c0b8}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .service{
+      padding:28px;border:1px solid rgba(255,255,255,.11);border-radius:24px;
+      background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));
+      min-height:210px;transition:.22s ease
+    }
+    .service:hover{transform:translateY(-4px);border-color:rgba(198,163,109,.45)}
+    .service .num{font-weight:900;font-size:.76rem;letter-spacing:.16em;color:#d7ba8e}
+    .service h3{font-size:1.6rem;margin:38px 0 10px}
+    .service p{margin:0;color:#bdb8b1;font-size:.92rem}
+    .result-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:44px;align-items:center}
+    .result-card{background:#fff;padding:12px;border-radius:30px;box-shadow:var(--shadow)}
+    .result-card img{width:100%;border-radius:22px;max-height:820px;object-fit:cover}
+    .result-copy h2{font-size:clamp(2.4rem,4vw,4.1rem);margin-bottom:18px}
+    .result-copy p{color:var(--muted)}
+    .notice{margin-top:24px;padding:18px 20px;border-radius:17px;background:rgba(198,163,109,.10);border:1px solid rgba(198,163,109,.24);font-size:.91rem}
+    .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .review{background:rgba(255,255,255,.58);border:1px solid var(--line);border-radius:24px;padding:27px;min-height:230px}
+    .review q{display:block;margin-top:18px;font-family:"Playfair Display",serif;font-size:1.35rem;line-height:1.35}
+    .review small{display:block;color:var(--muted);font-weight:700;margin-top:22px}
+    .social-proof{
+      margin-top:28px;padding:18px 20px;border-radius:18px;
+      background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap
+    }
+    .social-proof b{font-family:"Playfair Display",serif;font-size:1.35rem}
+    .clinic-card{display:grid;grid-template-columns:1.05fr .95fr;border-radius:32px;overflow:hidden;background:#fffaf4;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .clinic-card img{width:100%;height:100%;object-fit:cover;min-height:450px}
+    .clinic-copy{padding:52px}
+    .clinic-copy h2{font-size:clamp(2.3rem,4vw,3.8rem);margin-bottom:18px}
+    .clinic-copy p{color:var(--muted)}
+    .contact-list{display:grid;gap:12px;margin:24px 0 28px}
+    .contact-item{display:flex;align-items:center;gap:12px;padding:15px 17px;border-radius:15px;background:#f2e8db}
+    .form-section{padding-top:0}
+    .form-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;background:#171717;color:#fff;border-radius:34px;padding:42px}
+    .form-card h2{font-size:clamp(2.2rem,4vw,3.7rem);margin-bottom:16px}
+    .form-card p{color:#c7c2bc}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:grid;gap:7px}
+    .field.full{grid-column:1/-1}
+    label{font-size:.82rem;color:#d7d0c8;font-weight:700}
+    input,select,textarea{
+      width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.13);
+      background:rgba(255,255,255,.06);color:#fff;padding:14px 15px;outline:none
+    }
+    select option{color:#111}
+    textarea{min-height:110px;resize:vertical}
+    input:focus,select:focus,textarea:focus{border-color:rgba(198,163,109,.65)}
+    .form-note{font-size:.78rem;color:#aaa49d;margin-top:10px}
+    .map-wrap{margin-top:26px;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#e7ddd0;min-height:320px;display:grid;place-items:center;text-align:center;padding:30px;color:var(--muted)}
+    .map-wrap strong{display:block;color:var(--ink);font-family:"Playfair Display",serif;font-size:1.6rem;margin-bottom:8px}
+    .cta{text-align:center;margin-top:60px;padding:90px 20px;background:radial-gradient(circle at 50% -10%,rgba(198,163,109,.28),transparent 38%),#eee3d5}
+    .cta h2{font-size:clamp(2.5rem,5vw,4.8rem);max-width:830px;margin:0 auto 18px}
+    .cta p{max-width:660px;margin:0 auto 28px;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:28px 0 36px;color:var(--muted);font-size:.88rem}
+    .footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .float-wa{
+      position:fixed;right:20px;bottom:20px;z-index:60;
+      width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+      background:#1fa65c;color:#fff;font-weight:900;font-size:1.4rem;
+      box-shadow:0 12px 30px rgba(31,166,92,.28);transition:.2s ease
+    }
+    .float-wa:hover{transform:scale(1.06)}
+    .reveal{opacity:0;transform:translateY(18px);transition:.6s ease}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:900px){
+      .menu{position:absolute;top:78px;left:20px;right:20px;display:none;flex-direction:column;align-items:stretch;padding:20px;background:rgba(255,253,249,.98);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+      .menu.open{display:flex}
+      .hamburger{display:block}
+      .hero-grid,.about-grid,.result-grid,.clinic-card,.form-card{grid-template-columns:1fr}
+      .service-grid,.reviews-grid{grid-template-columns:1fr}
+      .section-head{align-items:start;flex-direction:column}
+      .portrait{max-width:630px;margin:auto}
+      .badge{left:12px}
+      .form-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+    }
+    @media(max-width:560px){
+      .container{width:min(var(--max),calc(100% - 26px))}
+      h1{font-size:3.2rem}
+      section{padding:62px 0}
+      .hero{padding-top:35px}
+      .hero-actions .btn{width:100%}
+      .portrait{border-radius:28px}
+      .portrait img{border-radius:21px}
+      .badge{position:static;max-width:none;margin-top:10px}
+      .services-shell{border-radius:28px}
+      .clinic-copy{padding:28px 22px}
+      .form-card{padding:28px 20px}
+      .brand span{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Odontologia especializada • atendimento humano • cuidado individualizado</div>
+
+  <div class="nav-wrap" id="navWrap">
+    <nav class="container">
+      <a class="brand" href="#inicio">
+        <div class="brand-mark">IA</div>
+        <div>
+          <strong>Dra. Isabella Amorim</strong>
+          <span>Odontologia Especializada</span>
+        </div>
+      </a>
+
+      <button class="hamburger" id="menuBtn" aria-label="Abrir menu">☰</button>
+
+      <div class="menu" id="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#contato" class="btn btn-primary">Agendar consulta</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Seu sorriso em boas mãos</div>
+          <h1>Um cuidado odontológico mais leve, bonito e humano.</h1>
+          <p class="lead">
+            Atendimento acolhedor, explicações claras e um olhar individual para cada paciente.
+            Uma experiência pensada para você se sentir seguro e confiante em cada etapa.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#agendamento">Agendar minha avaliação</a>
+            <a class="btn btn-light" href="#resultados">Ver resultado</a>
+          </div>
+          <div class="hero-points">
+            <span><i></i> Atendimento humanizado</span>
+            <span><i></i> Estética e saúde</span>
+            <span><i></i> Cuidado personalizado</span>
+          </div>
+        </div>
+
+        <div class="portrait reveal">
+          <img src="assets/dra-isabella-amorim.jpg" alt="Dra. Isabella Amorim" />
+          <div class="badge">
+            <div class="stars">★★★★★</div>
+            <p>“A melhor de todas… sempre muito educada e atenciosa!”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container about-grid">
+        <div class="image-card reveal">
+          <img src="assets/clinica-isabella-amorim.jpg" alt="Clínica Dra. Isabella Amorim" />
+        </div>
+        <div class="about-copy reveal">
+          <div class="eyebrow">Conheça a profissional</div>
+          <h2>Dra. Isabella Amorim</h2>
+          <p>
+            A proposta da clínica é oferecer uma odontologia próxima, cuidadosa e transparente.
+            Cada paciente é ouvido com atenção para que o tratamento faça sentido tanto para a saúde
+            quanto para a autoestima.
+          </p>
+          <p>
+            O foco é transformar o atendimento em uma experiência confortável, com planejamento,
+            orientação e acompanhamento em cada fase.
+          </p>
+          <div class="signature">Odontologia com carinho, confiança e propósito.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-shell" id="tratamentos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Cuidado completo</div>
+            <h2>Tratamentos com foco em saúde, estética e bem-estar.</h2>
+          </div>
+          <p>
+            Esta seção está preparada para receber os procedimentos exatos da clínica. Por enquanto,
+            deixei uma apresentação profissional e segura para a proposta inicial.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service reveal">
+            <div class="num">01</div>
+            <h3>Avaliação odontológica</h3>
+            <p>Consulta detalhada para entender suas necessidades e definir um plano de cuidado personalizado.</p>
+          </article>
+          <article class="service reveal">
+            <div class="num">02</div>
+            <h3>Estética do sorriso</h3>
+            <p>Planejamento voltado para naturalidade, harmonia facial e confiança ao sorrir.</p>
+          </article>
+          <article class="service reveal">
+            <div class="num">03</div>
+            <h3>Prevenção e acompanhamento</h3>
+            <p>Cuidado contínuo para manter a saúde bucal em dia e evitar problemas futuros.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados">
+      <div class="container result-grid">
+        <div class="result-card reveal">
+          <img src="assets/resultado-antes-depois.jpg" alt="Resultado de tratamento odontológico" />
+        </div>
+        <div class="result-copy reveal">
+          <div class="eyebrow">Resultados reais</div>
+          <h2>Mais confiança para sorrir e viver bem.</h2>
+          <p>
+            Cuidar do sorriso vai além da aparência. Um bom planejamento pode trazer mais conforto,
+            segurança e autoestima para o dia a dia.
+          </p>
+          <div class="notice">
+            <strong>Observação:</strong> resultados variam conforme cada caso. Todo tratamento depende de avaliação individual e indicação profissional.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="avaliacoes">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Experiência de pacientes</div>
+            <h2>Acolhimento que também aparece nas avaliações.</h2>
+          </div>
+          <p>Depoimentos em destaque para transmitir confiança e reforçar a qualidade percebida do atendimento.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review reveal">
+            <div class="stars">★★★★★</div>
+            <q>A melhor de todas…. Sempre muito educada e atenciosa!</q>
+            <small>Paciente da clínica</small>
+          </article>
+          <article class="review reveal">
+            <div class="stars">★★★★★</div>
+            <q>Atendimento humanizado, educada, preços excelentes!</q>
+            <small>Paciente da clínica</small>
+          </article>
+          <article class="review reveal">
+            <div class="stars">★★★★★</div>
+            <q>Melhor dentista da região!</q>
+            <small>Paciente da clínica</small>
+          </article>
+        </div>
+
+        <div class="social-proof reveal">
+          <div>
+            <b>Atendimento que gera confiança</b>
+            <div style="color:var(--muted);font-size:.9rem;margin-top:3px">Espaço pronto para receber avaliações reais do Google ou Instagram.</div>
+          </div>
+          <a class="btn btn-light" href="#contato">Quero conhecer a clínica</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="clinic-card reveal">
+          <img src="assets/clinica-isabella-amorim.jpg" alt="Clínica Dra. Isabella Amorim" />
+          <div class="clinic-copy">
+            <div class="eyebrow">Onde cuidar do seu sorriso</div>
+            <h2>Um espaço preparado para receber você.</h2>
+            <p>
+              Consulte horários disponíveis e converse com a clínica para tirar dúvidas antes do seu atendimento.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">📍 <span><strong>Endereço:</strong> adicionar endereço oficial</span></div>
+              <div class="contact-item">📞 <span><strong>WhatsApp:</strong> adicionar número oficial</span></div>
+              <div class="contact-item">📷 <span><strong>Instagram:</strong> adicionar @ da clínica</span></div>
+              <div class="contact-item">🕒 <span><strong>Horários:</strong> adicionar dias e horários de atendimento</span></div>
+            </div>
+
+            <a class="btn btn-primary" href="#" id="whatsBtn">Falar pelo WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="map-wrap reveal">
+          <div>
+            <strong>Mapa da clínica</strong>
+            Assim que o endereço oficial for informado, este espaço pode receber o Google Maps incorporado.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section" id="agendamento">
+      <div class="container">
+        <div class="form-card reveal">
+          <div>
+            <div class="eyebrow">Pré-agendamento</div>
+            <h2>Conte como podemos cuidar de você.</h2>
+            <p>
+              Preencha os dados abaixo. Ao enviar, o site monta uma mensagem pronta para ser enviada no WhatsApp da clínica.
+            </p>
+          </div>
+
+          <form id="bookingForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="nome">Seu nome</label>
+                <input id="nome" name="nome" type="text" placeholder="Ex.: Maria Silva" required>
+              </div>
+              <div class="field">
+                <label for="telefone">Telefone</label>
+                <input id="telefone" name="telefone" type="tel" placeholder="(43) 99999-9999" required>
+              </div>
+              <div class="field">
+                <label for="servico">Motivo do contato</label>
+                <select id="servico" name="servico">
+                  <option>Avaliação odontológica</option>
+                  <option>Estética do sorriso</option>
+                  <option>Prevenção e acompanhamento</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="periodo">Melhor período</label>
+                <select id="periodo" name="periodo">
+                  <option>Manhã</option>
+                  <option>Tarde</option>
+                  <option>Noite</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Conte brevemente o que você precisa."></textarea>
+              </div>
+              <div class="field full">
+                <button class="btn btn-primary" type="submit">Enviar pré-agendamento</button>
+                <div class="form-note">O formulário não armazena seus dados. Ele apenas prepara a mensagem para o WhatsApp.</div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container reveal">
+        <div class="eyebrow">Dra. Isabella Amorim</div>
+        <h2>Seu próximo sorriso pode começar com uma conversa.</h2>
+        <p>Agende uma avaliação e receba uma orientação personalizada para o seu caso.</p>
+        <a class="btn btn-primary" href="#agendamento">Quero agendar</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> Dra. Isabella Amorim — Odontologia Especializada.</div>
+      <div>Landing page responsiva • celular, tablet e desktop</div>
+    </div>
+  </footer>
+
+  <a class="float-wa" href="#agendamento" aria-label="Agendar consulta">✆</a>
+
+  <script>
+    const WHATSAPP_NUMBER = ""; // Ex.: 5543999999999
+    const INSTAGRAM = "";       // Ex.: dra.isabellaamorim
+
+    const navWrap = document.getElementById("navWrap");
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+
+    menuBtn.addEventListener("click", () => menu.classList.toggle("open"));
+    menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.remove("open")));
+    addEventListener("scroll", () => navWrap.classList.toggle("scrolled", scrollY > 12));
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    function openWhatsApp(message) {
+      if (!WHATSAPP_NUMBER) {
+        alert("Falta colocar o WhatsApp oficial no arquivo index.html, na variável WHATSAPP_NUMBER.");
+        return;
+      }
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank");
+    }
+
+    document.getElementById("whatsBtn").addEventListener("click", (e) => {
+      e.preventDefault();
+      openWhatsApp("Olá! Gostaria de agendar uma avaliação com a Dra. Isabella Amorim.");
+    });
+
+    document.getElementById("bookingForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value.trim();
+      const telefone = document.getElementById("telefone").value.trim();
+      const servico = document.getElementById("servico").value;
+      const periodo = document.getElementById("periodo").value;
+      const mensagem = document.getElementById("mensagem").value.trim();
+
+      const text =
+`Olá! Gostaria de fazer um pré-agendamento com a Dra. Isabella Amorim.
+
+Nome: ${nome}
+Telefone: ${telefone}
+Motivo: ${servico}
+Melhor período: ${periodo}
+Mensagem: ${mensagem || "Não informada"}`;
+
+      openWhatsApp(text);
+    });
+  </script>
+</body>
+</html>
