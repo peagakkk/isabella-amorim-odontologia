@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="120" fill="#111111"/>
+  <path d="M135 114c54-54 111-19 121 9 10-28 67-63 121-9 61 61 13 155-22 218-32 58-57 94-99 94s-67-36-99-94c-35-63-83-157-22-218Z"
+        fill="none" stroke="#c6a36d" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="256" y="300" text-anchor="middle" font-family="Georgia,serif" font-size="112" font-weight="700" fill="#fffaf4">IA</text>
+</svg>

@@ -1,0 +1,39 @@
+SITE V2 - DRA. ISABELLA AMORIM
+
+Esta versão inclui:
+- design premium e responsivo
+- hero com CTA
+- seção sobre a Dra. Isabella
+- tratamentos
+- antes/depois
+- avaliações
+- seção de contato
+- espaço para Google Maps
+- formulário de pré-agendamento
+- integração preparada para WhatsApp
+- animações leves
+
+PARA CONFIGURAR O WHATSAPP
+Abra index.html e procure:
+const WHATSAPP_NUMBER = "";
+
+Exemplo:
+const WHATSAPP_NUMBER = "5543999999999";
+
+OUTROS DADOS A PREENCHER
+- Endereço
+- Instagram
+- Horários
+- Procedimentos exatos
+- CRO, se quiser exibir
+
+COMO ABRIR
+Abra index.html diretamente no navegador.
+
+COMO PUBLICAR
+Pode usar:
+- Netlify
+- Vercel
+- GitHub Pages
+- Hostinger
+- servidor próprio
